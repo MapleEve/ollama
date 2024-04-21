@@ -8,4 +8,5 @@ import (
 
 func main() {
 	fmt.Println(llama.SystemInfo())
+	llama.Run("gemma-7b-it.gguf", "Hello, world!")
 }
