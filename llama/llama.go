@@ -5,8 +5,13 @@ package llama
 // #cgo darwin,amd64 CXXFLAGS: -std=c++11
 // #cgo darwin,arm64 LDFLAGS: ggml-metal.o -framework Foundation -framework Metal -framework MetalKit -framework Accelerate
 // #cgo darwin,amd64 LDFLAGS: -framework Foundation -framework Accelerate
-// #cgo cuda CFLAGS: -DGGML_USE_CUDA -DGGML_SHARED -DGGML_MULTIPLATFORM
-// #cgo cuda CXXFLAGS: -std=c++11 -DGGML_USE_CUDA -DGGML_SHARED -DGGML_MULTIPLATFORM
+// #cgo avx CFLAGS: -mavx
+// #cgo avx CXXFLAGS: -mavx
+// #cgo avx2 CFLAGS: -mavx -mavx2 -mfma
+// #cgo avx2 CXXFLAGS: -mavx -mavx2 -mfma
+// #cgo avx2 LDFLAGS: -lm
+// #cgo cuda CFLAGS: -DGGML_USE_CUDA -DGGML_SHARED -mavx
+// #cgo cuda CXXFLAGS: -std=c++11 -DGGML_USE_CUDA -DGGML_SHARED -mavx
 // #cgo cuda LDFLAGS: -L. -L"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/lib/x64" -lggml-cuda -lcuda -lcudart -lcublas -lcublasLt
 // #include <stdlib.h>
 // #include "llama.h"
