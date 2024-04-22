@@ -1,6 +1,6 @@
 # `llama`
 
-This package integrates llama.cpp as an Ollama runner.
+This package integrates llama.cpp as a Go package that can be compiled for different targets.
 
 ### AVX
 
